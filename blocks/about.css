@@ -1,0 +1,10 @@
+.about-box {
+  background: #d1d5db;
+  border-radius: 12px;
+  padding: 18px;
+  min-height: 180px;
+}
+html[data-theme="dark"] .about-box {
+  background: #1a1f2f;
+  border: 1px solid var(--border);
+}

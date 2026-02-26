@@ -1,0 +1,50 @@
+.contact-form {
+  max-width: 620px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  transition: border-color var(--trans), box-shadow var(--trans);
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(30, 102, 255, 0.6);
+  box-shadow: 0 0 0 4px rgba(30, 102, 255, 0.12);
+}
+
+.error {
+  min-height: 16px;
+  color: #ef4444;
+  font-size: 12px;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.form-hint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
