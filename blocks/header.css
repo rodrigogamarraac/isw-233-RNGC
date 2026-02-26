@@ -2,7 +2,7 @@
   padding: 22px 0 18px;
 }
 
-.header-inner {
+.header--inner {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;

@@ -2,7 +2,7 @@
   padding: 40px 0;
 }
 
-.footer-inner {
+.footer--inner {
   display: grid;
   justify-items: center;
   gap: 14px;
