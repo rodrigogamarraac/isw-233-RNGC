@@ -4,7 +4,7 @@
   padding: 18px;
   min-height: 180px;
 }
-html[data-theme="dark"] .about--box {
+/*html[data-theme="dark"] .about--box {
   background: #1a1f2f;
   border: 1px solid var(--border);
-}
+}*/
