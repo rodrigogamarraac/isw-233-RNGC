@@ -1,45 +1,30 @@
-/*export default class CardFactory {
-  createProjectCard(project) {
-    const article = document.createElement("article");
-    article.className = "project-card";
-
-    const title = document.createElement("h3");
-    title.className = "project-card__title";
-    title.textContent = project.title;
-
-    const description = document.createElement("p");
-    description.className = "project-card__description";
-    description.textContent = project.description;
-
-    article.appendChild(title);
-    article.appendChild(description);
-
-    return article;
-  }
-}*/
-function ProjectCard(){
-  this.type = "project";
-}
-
-function BlogCard(){
-  this.type = "blog";
-}
-
-function CardFactory(){
-  this.createCard = (type) => {
-    switch(type){
-      case "project":
-        return new ProjectCard();
-      case "blog":
-        return new BlogCard();
+export default class CardFactory {
+  createCard(type, data) {
+    switch (type) {
+      case 'project':
+        return this.createProjectCard(data);
+      case 'blog':
+        return this.createBlogCard(data);
+      default:
+        throw new Error(`Tipo de card no soportado: ${type}`);
     }
   }
-}
 
-const cardFactory = new CardFactory();
-cardFactory.createCard("project");
-cardFactory.createCard("project");
-cardFactory.createCard("project");
-cardFactory.createCard("blog");
-cardFactory.createCard("blog");
-cardFactory.createCard("blog");
+  createProjectCard(project) {
+    const card = document.createElement('project-card');
+    card.setAttribute('title', project.title);
+    card.setAttribute('text', project.description);
+    card.setAttribute('img', project.image);
+    card.setAttribute('alt', project.alt);
+    return card;
+  }
+
+  createBlogCard(post) {
+    const card = document.createElement('blog-card');
+    card.setAttribute('title', post.title);
+    card.setAttribute('text', post.text);
+    card.setAttribute('date', post.date);
+    card.setAttribute('datetime', post.datetime);
+    return card;
+  }
+}

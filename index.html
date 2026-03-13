@@ -54,47 +54,25 @@
     </header>
 
     <main>
-      <section id="projects" class="projects reveal">
-        <h2 class="projects__title">Proyectos</h2>
-        <p class="projects__subtitle">Selección de trabajos recientes</p>
+      <section class="section container reveal" id="proyectos">
+        <h2 class="section__title">Proyectos</h2>
+        <p class="section__subtitle">Selección de trabajos recientes</p>
 
-        <div id="projectsContainer" class="projects__grid"></div>
+        <div class="projects" id="projectsContainer"></div>
       </section>
+
+      <!--<project-card></project-card>
+      <project-card></project-card>
+      <project-card></project-card>
+      <blog-card></blog-card>
+      <blog-card></blog-card>
+      <blog-card></blog-card>-->
+
 
       <section class="section container reveal" id="blog">
         <h2 class="section__title">Blog</h2>
 
-        <div class="blog-preview">
-          <article class="blog-row">
-            <div class="blog-row__meta">
-              <h3 class="blog-row__title">Cómo estructuré mi portafolio</h3>
-              <time class="blog-row__date" datetime="2026-02-12">12 Feb 2026</time>
-            </div>
-            <p class="blog-row__text">
-              Tips rápidos para un hero claro, secciones simples y consistencia visual.
-            </p>
-          </article>
-
-          <article class="blog-row">
-            <div class="blog-row__meta">
-              <h3 class="blog-row__title">Buenas prácticas en CSS</h3>
-              <time class="blog-row__date" datetime="2026-02-05">05 Feb 2026</time>
-            </div>
-            <p class="blog-row__text">
-              Variables, espaciado consistente, componentes reutilizables y media queries.
-            </p>
-          </article>
-
-          <article class="blog-row">
-            <div class="blog-row__meta">
-              <h3 class="blog-row__title">Vanilla JS para interacciones</h3>
-              <time class="blog-row__date" datetime="2026-01-28">28 Ene 2026</time>
-            </div>
-            <p class="blog-row__text">
-              Scroll suave, modo oscuro con localStorage y validación del formulario.
-            </p>
-          </article>
-        </div>
+        <div class="blog-preview" id="blogContainer"></div>
       </section>
 
       <section class="section container reveal" id="sobre-mi">
@@ -156,7 +134,7 @@
         <div class="copyright">© Rodrigo Gamarra</div>
       </div>
     </footer>
-    <script src="./index.js"></script>
+    <script type="module" src="./index.js"></script>
     
 
     
