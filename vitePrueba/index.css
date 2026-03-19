@@ -3,11 +3,10 @@
 @import "./blocks/footer.css";
 @import "./blocks/hero.css";
 @import "./blocks/projects.css";
-@import "./blocks/skills.css";
 @import "./blocks/header.css";
 @import "./blocks/buttons.css";
 
-@import "./vendor/normalize.css";
+
 
 :root {
   --bg: #ffffff;
