@@ -1,0 +1,37 @@
+.site-footer {
+  padding: 40px 0;
+}
+
+.footer--inner {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.social__link {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding: 6px 8px;
+  border-radius: 10px;
+  transition: background var(--trans), border-color var(--trans);
+}
+.social__link:hover {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+html[data-theme="dark"] .social__link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.copyright {
+  color: var(--muted);
+  font-size: 13px;
+}
