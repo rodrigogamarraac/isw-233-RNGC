@@ -1,7 +1,10 @@
 import './components/ProjectCard.js';
 import './components/BlogCard.js';
 import './patterns/HandleBars.js';
+import './Observers/MutationObservers.js';
+import "./Observers/IntersectionObservers.js";
 import SingletonPortfolio from './patterns/SingletonPortfolio.js';
+//import initDynamicCardObservers from './Observers/MutationObservers.js';
 
 const $ = (sel, parent = document) => parent.querySelector(sel);
 const $$ = (sel, parent = document) => [...parent.querySelectorAll(sel)];
@@ -10,51 +13,7 @@ const portfolio = new SingletonPortfolio();
 portfolio.renderProjects('projectsContainer');
 portfolio.renderBlog('blogContainer');
 
-initDynamicCardObservers();
 
-function initDynamicCardObservers() {
-  const projectsContainer = document.getElementById('projectsContainer');
-  const blogContainer = document.getElementById('blogContainer');
-
-  const containers = [projectsContainer, blogContainer].filter(Boolean);
-  if (containers.length === 0) return;
-
-  const revealObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('in-view');
-      obs.unobserve(entry.target);
-    });
-  }, { threshold: 0.15 });
-
-  const registerCard = (node) => {
-    if (!(node instanceof HTMLElement)) return;
-    if (!node.matches('project-card, blog-card')) return;
-
-    node.classList.add('reveal');
-    revealObserver.observe(node);
-  };
-
-  // registrar cards ya existentes
-  containers.forEach((container) => {
-    container.querySelectorAll('project-card, blog-card').forEach(registerCard);
-  });
-
-  const mo = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      mutation.addedNodes.forEach(registerCard);
-
-      if (mutation.type === 'childList') {
-        const container = mutation.target;
-        container.classList.toggle('is-empty', container.children.length === 0);
-      }
-    });
-  });
-
-  containers.forEach((container) => {
-    mo.observe(container, { childList: true });
-  });
-}
 
 (function initTheme() {
   const saved = localStorage.getItem('theme');
@@ -98,24 +57,7 @@ function initDynamicCardObservers() {
   });
 })();
 
-(function initReveal() {
-  const items = $$('.reveal');
-  if (!('IntersectionObserver' in window) || items.length === 0) {
-    items.forEach((el) => el.classList.add('in-view'));
-    return;
-  }
 
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('in-view');
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  items.forEach((el) => io.observe(el));
-})();
 
 (function initForm() {
   const form = $('#contactForm');
