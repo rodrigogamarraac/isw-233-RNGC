@@ -32,12 +32,14 @@ function initDynamicCardObservers() {
 
       if (mutation.type === 'childList') {
         const container = mutation.target;
-        container.classList.toggle('is-empty', container.children.length === 0);
+        if (container instanceof HTMLElement) {
+          container.classList.toggle('is-empty', container.children.length === 0);
+        }
       }
     });
   });
 
-  const aboutColor = document.querySelector('.about--box');
+  const aboutColor: HTMLElement = document.querySelector('.about--box');
   const buttonHeader = document.querySelector('#themeToggle');
   //Probando mutation
   const mutationAbout = new MutationObserver(entries => {
