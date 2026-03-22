@@ -1,7 +1,26 @@
-import CardFactory from './CardFactory.js';
+import CardFactory from './CardFactory';
+
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+};
+
+type BlogPost = {
+  title: string;
+  date: string;
+  datetime: string;
+  text: string;
+};
 
 export default class SingletonPortfolio {
   static instance = null;
+  
+  cardFactory: CardFactory;
+  projects: Project[];
+  blogPosts: BlogPost[];
+
 
   constructor() {
     if (SingletonPortfolio.instance) {

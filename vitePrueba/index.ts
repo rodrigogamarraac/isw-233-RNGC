@@ -6,8 +6,8 @@ import "./Observers/IntersectionObservers.js";
 import SingletonPortfolio from './patterns/SingletonPortfolio.js';
 //import initDynamicCardObservers from './Observers/MutationObservers.js';
 
-const $ = (sel, parent = document) => parent.querySelector(sel);
-const $$ = (sel, parent = document) => [...parent.querySelectorAll(sel)];
+const $ = (sel: string, parent = document) => parent.querySelector(sel);
+const $$ = (sel: string, parent = document): Element[] => [...parent.querySelectorAll(sel)];
 
 const portfolio = new SingletonPortfolio();
 portfolio.renderProjects('projectsContainer');
