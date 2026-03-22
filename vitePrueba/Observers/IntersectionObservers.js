@@ -11,7 +11,12 @@ const $$ = (sel, parent = document) => [...parent.querySelectorAll(sel)];
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('in-view');
+        if (entry.isIntersecting){
+          entry.target.classList.add('in-view');
+        }
+        else{
+          entry.target.classList.remove('in-view');
+        }
       });
     },
     { threshold: 0.12 }

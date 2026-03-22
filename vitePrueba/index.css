@@ -159,13 +159,23 @@ html[data-theme="dark"] .blog-row {
 
 /* Scroll reveal*/
 .reveal {
+  /*transform: translateY(12px);*/
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 420ms ease, transform 420ms ease;
+  /*scale: 0;
+  translate: -100%;
+  transition: opacity 420ms ease, transform 420ms ease;
+  opacity: 0;*/
 }
 .reveal.in-view {
+  
+  /*scale: 1;
+  translate: 0;
+  opacity: 1;*/
   opacity: 1;
   transform: translateY(0);
+  /*transform: translateY(0);*/
 }
 
 /* Responsive */
