@@ -1,6 +1,7 @@
 import './components/ProjectCard.js';
 import './components/BlogCard.js';
 import SingletonPortfolio from './patterns/SingletonPortfolio.js';
+import './index.css';
 
 const $ = (sel, parent = document) => parent.querySelector(sel);
 const $$ = (sel, parent = document) => [...parent.querySelectorAll(sel)];

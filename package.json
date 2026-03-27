@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": "webpack serve --env NODE_ENV=development",
+    "build": "set NODE_ENV=production && webpack"
+  },
   "dependencies": {
     "node": "^25.8.2"
   },
@@ -18,5 +22,7 @@
     "webpack-bundle-analyzer": "^5.3.0",
     "webpack-cli": "^7.0.2",
     "webpack-dev-server": "^5.2.3"
-  }
+    
+  },
+  "type": "module"
 }
